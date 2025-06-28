@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* Changed to row for side-by-side layout */
+  height: 100vh; /* Full viewport height */
+}
+
+.topbar {
+  background-color: #868181;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  width: 100%;
+  position: fixed;
+  border-bottom: 3px solid #000000;
+  top: 0;
+  z-index: 3; /* Ensure topbar stays above other elements */
+}
+
+
+#toolbar {
+  background-color: #868181;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  text-align: center;
+  border-right: 2px solid #000000;;
+  width: 200px; /* Fixed width for the side bar */
+  flex-shrink: 0;
+  position: fixed;
+  top: 40px; /* Offset by topbar height */
+  left: 0;
+  height: calc(100vh - 40px); /* Adjust height to account for topbar */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+
+#toolbar button {
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  width:100%;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid #000000;
+}
+
+
+#toolbar button:hover {
+  background-color: #d7d7d7;
+}
+
+li{
+margin: auto;
+width: 80%;
+}
+
+#drawingArea {
+  flex-grow: 1;
+  border: 2px solid #000000;
+  margin-top: 40px; /* Offset by topbar height */
+  margin-left: 200px; /* Offset by toolbar width */
+  position: relative;
+  overflow: auto;
+  background-color: transparent;
+}
+
+.class-element {
+  border: 1px solid black;
+  padding: 7px;
+  margin: 5px;
+  position: absolute;
+  background-color: lightyellow;
+  cursor: move;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.class-element.selected {
+  border-color: blue;
+  background-color: lightblue;
+}
+
+.class-element strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.class-element hr {
+  margin: 10px 0;
+  border: 1.5px solid black;
+
+}
+
+.class-element {
+  z-index: 1;
+  position: relative;
+}
+
+.delete-button {
+  display: inline-block;
+  font-size:12px;
+  background-color: #f81c1c; /* Couleur de fond rouge */
+  color: #fff; /* Couleur du texte blanc */
+  padding: 5px 10px; /* Espacement interne */
+  border: none; /* Supprimer la bordure */
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+#svgContainer {
+  position: absolute;
+  top: 40px; /* Offset by topbar height */
+  left: 200px; /* Offset by toolbar width */
+  height: calc(100% - 40px); /* Adjust height to account for topbar */
+  width: calc(100% - 200px); /* Adjust width to account for toolbar */
+  z-index: 1; /* Adjust as needed */
+}

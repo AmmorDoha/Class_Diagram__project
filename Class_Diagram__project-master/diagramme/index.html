@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagramme de Classe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  <div class="topbar">
+    - GENERATEUR DIAGRAMME DES CLASSES -
+  </div>
+
+  <div id="toolbar">
+    <button id="addClassButton" class="mt-5">Ajouter Classe</button>
+    <button id="deleteClassButton" class="mt-2">Supprimer Classe</button>
+
+    <!-- Ajouter d'autres boutons au besoin -->
+    <button class="btn btn-primary dropdown-toggle" style="color:black;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Opérations Attributs
+    </button>
+    <ul class="dropdown-menu">
+      <li><button id="addAttributeButton" class="col-11 mb-1 attr">Ajouter</button></li>
+      <li><button id="editAttributesButton" class="col-11 mb-1 attr">Modifier</button></li>
+      <li><button id="deleteAttributeButton" class="col-11 mb-1 attr">Supprimer</button></li>
+    </ul>
+
+    <button id="methodActionButton" class="dropdown-toggle">Opérations Méthodes</button>
+    <div id="methodActionDropdown" style="display: none;">
+      <label for="methodAction"><span style="color :black;font-weight: bold;">Choisir une action :</span></label>
+      <select id="methodAction">
+        <option value="add">Ajouter</option>
+        <option value="edit">Éditer</option>
+        <option value="delete">Supprimer</option>
+      </select>
+      <button id="executeMethodAction">Exécuter</button>
+    </div>
+
+    <!-- Bouton pour ajouter une relation -->
+    <button id="addRelationButton">Ajouter Relation</button>
+    <button id="generateCodeButton">Générer Code Java</button>
+
+    
+    <div style="margin-top: 330px; font-weight: bold;color:black;">Réalisé par: <br> Rhoulam Achraf</div> 
+  </div>
+
+  <div id="drawingArea">
+  </div>
+
+  <!-- Conteneur SVG pour les lignes de relations -->
+  <svg id="svgContainer" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: -1;"></svg>
+
+
+<!-- Vos scripts et liens Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script type="module" src="js/script.js"></script>
+</body>
+</html>
